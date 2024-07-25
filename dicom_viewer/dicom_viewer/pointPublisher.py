@@ -13,7 +13,7 @@ class PointPublisher(Node):
         super().__init__('point_publisher')
         self.publisher_ = self.create_publisher(Float64MultiArray, 'image_points', 10)
         print('Point publisher initialized !')
-        # timer_period = 1 
+        # timer_period = 1
         # self.timer = self.create_timer(timer_period, self.point_publisher_callback)
 
     def publish_points(self, insertion_point, target_point):
