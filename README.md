@@ -1,9 +1,9 @@
-# needle_pantograph_v2
+# Needle insertion training device (NITD) 
 Second year master project concerning the development of a haptic training device for needle insertion, based on the 2-Dof pantograph used at the ICube laboratory.
 
 Documentation:
-[Report](doc/placeholder.txt) 
-[Videos](doc/videos)
+[Report](doc/placeholder.txt) <br/>
+[Videos](doc/videos) <br/>
 
 ## Installation
 
@@ -23,8 +23,8 @@ WS_PANTOGRAPH=~/dev/ws_pantograph_ros2/
 mkdir -p $WS_PANTOGRAPH/src
 cd $WS_PANTOGRAPH/src
 
-git clone https://github.com/ICube-Robotics/needle_pantograph_ros2.git
-vcs import . < needle_pantograph_ros2/needle_pantograph_ros2.repos
+git clone https://github.com/BlackSnow-333/needle_insertion_training_device.git
+vcs import . < needle_insertion_training_device/nitd.repos
 rosdep install --ignore-src --from-paths . -y -r
 
 cd ..
