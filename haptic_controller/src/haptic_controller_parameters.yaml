@@ -1,0 +1,71 @@
+haptic_controller:
+  prefix: {
+    type: string,
+    default_value: "",
+    description: "Model prefix, none by default.",
+  }
+  model_parameters:
+    kp: {
+      type: double,
+      default_value: 1.0,
+      description: "Proportional gain for force computation",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    kd_tip: {
+      type: double,
+      default_value: 1.0,
+      description: "Dampening gain for force computation",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    ratio: {
+      type: double,
+      default_value: 0.7,
+      description: "ratio for force dampening ceofficient",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    l_a1: {
+      type: double,
+      default_value: 0.1,
+      description: "Length of the first link of the pantograph.",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    l_a2: {
+      type: double,
+      default_value: 0.165,
+      description: "Length of the second link of the pantograph.",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    l_a3: {
+      type: double,
+      default_value: 0.165,
+      description: "Length of the third link of the pantograph.",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    l_a4: {
+      type: double,
+      default_value: 0.1,
+      description: "Length of the fourth link of the pantograph.",
+      validation: {
+        gt<>: [0],
+      }
+    }
+    l_a5: {
+      type: double,
+      default_value: 0.085,
+      description: "Length of the fifth link of the pantograph.",
+      validation: {
+        gt<>: [0],
+      }
+    }
