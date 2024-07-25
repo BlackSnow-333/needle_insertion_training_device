@@ -1,7 +1,7 @@
-# Needle insertion training device (NITD) 
+# Needle insertion training device (NITD)
 Second year master project concerning the development of a haptic training device for needle insertion, based on the 2-Dof pantograph used at the ICube laboratory.
 
-Documentation:
+Documentation: <br/>
 [Report](doc/placeholder.txt) <br/>
 [Videos](doc/videos) <br/>
 
@@ -41,17 +41,17 @@ source install/setup.bash
 
 ```bash
 # Launch with mock hardware
-ros2 launch pantograph_bringup pantograph.launch.py
+ros2 launch nitd_bringup nitd.launch.py
 ```
 
 ```bash
 # With the actual robot
 sudo /etc/init.d/ethercat start  # start ETherLab daemon
-ros2 launch pantograph_bringup pantograph.launch.py use_fake_hardware:=false
+ros2 launch nitd_bringup nitd.launch.py use_fake_hardware:=false
 ```
 ```bash
 # Load haptic_controller
-ros2 control load_controller haptic_controller --set-state active 
+ros2 control load_controller haptic_controller --set-state active
 ```
 
 ## TODO: finish readme
