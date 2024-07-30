@@ -49,9 +49,41 @@ ros2 launch nitd_bringup nitd.launch.py
 sudo /etc/init.d/ethercat start  # start ETherLab daemon
 ros2 launch nitd_bringup nitd.launch.py use_fake_hardware:=false
 ```
+## Haptic controller usage
+
 ```bash
 # Load haptic_controller
 ros2 control load_controller haptic_controller --set-state active
 ```
 
-## TODO: finish readme
+```bash
+# Change kp gain
+ros2 param set /haptic_controller model_parameters.kp 1.5
+```
+
+
+```bash
+# Change kd gain
+ros2 param set /haptic_controller model_parameters.kd_tip 0.5
+```
+
+## Controller logic
+The controler `update` method computes the torque that has to be sent to the pantograph active joints, according to the virtual work principle : <br/>
+**Virutal work principle**
+$$ \tau = J^T(Q). F_{mech}$$
+
+With $F_{mech}$ the force that the pantograph needs to apply to produce the desired guiding force $F_{guide}$ at the point the user holds the needle. $F_{guide}$ is proportional to the angle error $\varepsilon$ , the difference between the predefined trajectory and the current needle position : 
+
+$$F_{guide} = K_p. \varepsilon . v_u$$
+
+$F_{mech}$ is a function of $F_{guide}$ and is calculated as follows : <br/>
+**Pantograph force calculation**
+
+$$F_{mech} = \lVert F_{mech} \rVert . v_{mech}  $$
+
+Finaly we add a dampening coefficient to the force used to calculate the joint torques : 
+$$ F_{mech}^{'} = \lVert F_{mech} \rVert . v_{mech}- K_d . J.\dot{Q}$$
+
+For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the report pf the master project by Luis MALDONADO (TODO: add report) 
+
+
