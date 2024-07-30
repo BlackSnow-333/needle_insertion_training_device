@@ -49,6 +49,11 @@ ros2 launch nitd_bringup nitd.launch.py
 sudo /etc/init.d/ethercat start  # start ETherLab daemon
 ros2 launch nitd_bringup nitd.launch.py use_fake_hardware:=false
 ```
+
+## DICOM viewer usage
+
+See DICOM viewer [readme](dicom_viewer/readme.md)
+
 ## Haptic controller usage
 
 ```bash
@@ -84,6 +89,6 @@ $$F_{mech} = \lVert F_{mech} \rVert . v_{mech}  $$
 Finaly we add a dampening coefficient to the force used to calculate the joint torques : 
 $$ F_{mech}^{'} = \lVert F_{mech} \rVert . v_{mech}- K_d . J.\dot{Q}$$
 
-For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the report pf the master project by Luis MALDONADO (TODO: add report) 
+For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/placeholder.txt) pf the master project by Luis MALDONADO 
 
 
