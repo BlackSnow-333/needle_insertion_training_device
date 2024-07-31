@@ -129,15 +129,36 @@ def generate_launch_description():
         name='stereo_cam_node',
     )
 
+    new_dicom_reader_node = Node(
+        package='dicom_viewer',
+        executable='mainwindow',
+        name='new_dicom_reader_node',
+    )
+
+    trajectory_marker_node = Node(
+        package='haptic_controller',
+        executable='markers.py',
+        name='trajectory_marker_node',
+    )
+
+    error_estimation_node = Node(
+        package='haptic_controller',
+        executable='error_estimation',
+        name='error_estimation_node',
+    )
+
     nodes = [
         control_node,
         rviz_node,
         robot_state_pub_node,
         joint_state_broadcaster_spawner,
         pantograph_mimick_controller_spawner,
+        new_dicom_reader_node,
         # pantograph_mock_motors_controller_spawner,
         # pantograph_mock_operator_controller_spawner,
         # effort_controller_spawner,
+        error_estimation_node,
+        trajectory_marker_node,
         stereo_cam_node,
 
     ]
