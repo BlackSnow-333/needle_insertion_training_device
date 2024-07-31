@@ -89,6 +89,6 @@ $$F_{mech} = \lVert F_{mech} \rVert . v_{mech}  $$
 Finaly we add a dampening coefficient to the force used to calculate the joint torques : 
 $$ F_{mech}^{'} = \lVert F_{mech} \rVert . v_{mech}- K_d . J.\dot{Q}$$
 
-For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/placeholder.txt) pf the master project by Luis MALDONADO 
+For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/placeholder.txt) of the master project by Luis MALDONADO 
 
 
