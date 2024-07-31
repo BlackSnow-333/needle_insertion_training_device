@@ -73,11 +73,12 @@ ros2 param set /haptic_controller model_parameters.kd_tip 0.5
 ```
 
 ## Controller logic
-The controler `update` method computes the torque that has to be sent to the pantograph active joints, according to the virtual work principle : <br/>
-**Virutal work principle**
-$$ \tau = J^T(Q). F_{mech}$$
+The controller `update` method computes the torque that has to be sent to the pantograph active joints, according to the virtual work principle : <br/>
+**Virtual work principle** <br/>
 
-With $F_{mech}$ the force that the pantograph needs to apply to produce the desired guiding force $F_{guide}$ at the point the user holds the needle. $F_{guide}$ is proportional to the angle error $\varepsilon$ , the difference between the predefined trajectory and the current needle position : 
+$$\tau = J^T(Q). F_{mech}$$
+
+With $F_{mech}$ the force that the pantograph needs to apply to produce the desired guiding force $F_{guide}$ at the point the user holds the needle. $F_{guide}$ is proportional to the angle error $\varepsilon$ , the difference between the predefined trajectory and the current needle position :
 
 $$F_{guide} = K_p. \varepsilon . v_u$$
 
@@ -86,9 +87,7 @@ $F_{mech}$ is a function of $F_{guide}$ and is calculated as follows : <br/>
 
 $$F_{mech} = \lVert F_{mech} \rVert . v_{mech}  $$
 
-Finaly we add a dampening coefficient to the force used to calculate the joint torques : 
-$$ F_{mech}^{'} = \lVert F_{mech} \rVert . v_{mech}- K_d . J.\dot{Q}$$
+Finaly we add a dampening coefficient to the force used to calculate the joint torques : <br/>
+$$F_{mech}^{'} = \lVert F_{mech} \rVert . v_{mech}- K_d . J.\dot{Q}$$
 
-For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/placeholder.txt) of the master project by Luis MALDONADO 
-
-
+For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/placeholder.txt) of the master project by Luis MALDONADO
