@@ -2,7 +2,7 @@
 Second year master project concerning the development of a haptic training device for needle insertion, based on the 2-Dof pantograph used at the ICube laboratory.
 
 Documentation: <br/>
-[Report](doc/placeholder.txt) <br/>
+[Report](doc/MASTER_Internship_Report_Luis_MALDONADO.pdf) <br/>
 [Videos](doc/videos) <br/>
 
 ## Installation
@@ -90,4 +90,4 @@ $$F_{mech} = \lVert F_{mech} \rVert . v_{mech}  $$
 Finaly we add a dampening coefficient to the force used to calculate the joint torques : <br/>
 $$F_{mech}^{'} = \lVert F_{mech} \rVert . v_{mech}- K_d . J.\dot{Q}$$
 
-For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/placeholder.txt) of the master project by Luis MALDONADO
+For more details about the calculations for $\lVert F_{mech} \rVert$ , $v_{mech}$ and $v_{u}$ check the [Report](doc/MASTER_Internship_Report_Luis_MALDONADO.pdf) of the master project by Luis MALDONADO
